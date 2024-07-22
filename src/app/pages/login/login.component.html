@@ -1,0 +1,39 @@
+<section class="content flex-center">
+  <form *ngIf="login_form" [formGroup]="login_form" (ngSubmit)="onSubmit()">
+    <h2>Iniciar Sesión</h2>
+
+    <div class="form-group">
+      <label for="tipo_id">Tipo de Documento</label>
+      <select required formControlName="tipo_id" id="tipo_id" value>
+        <option value="0">Selecciona una opción</option>
+        <option
+          *ngFor="let tipo of _utils.tipos_documento"
+          [value]="tipo.short"
+        >
+          {{ tipo.long }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="num_id">Número de Documento</label>
+      <input id="num_id" formControlName="num_id" type="number" />
+    </div>
+
+    <div *ngIf="show_pass" class="form-group">
+      <label for="pass">Contraseña</label>
+      <input id="pass" formControlName="pass" type="password" />
+    </div>
+
+    <div *ngIf="show_pass_confirm" class="form-group">
+      <label for="pass_confirm">Confirmar Contraseña</label>
+      <input id="pass_confirm" formControlName="pass_confirm" type="password" />
+    </div>
+
+    <button type="submit">
+      {{ show_pass ? "Inicial Sesión" : "Continuar" }}
+    </button>
+
+    <a routerLink="/register">¿No tienes cuenta? registrate aqui</a>
+  </form>
+</section>

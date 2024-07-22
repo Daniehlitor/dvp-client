@@ -1,0 +1,34 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+h2 {
+    margin: 0px;
+    margin-bottom: 100px;
+}
+
+small {
+    color: gray;
+}
+
+.persona-reg {
+    width: 80%;
+    min-height: 100px;
+
+    margin-top: 25px;
+    padding: 15px 30px;
+
+    border-radius: 12px;
+    background: var(--app-gray);
+
+    display: flex;
+    flex-direction: column;
+
+    h5{
+        margin: 0px;
+    }
+
+}

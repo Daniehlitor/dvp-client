@@ -1,0 +1,14 @@
+<section class="content">
+  <button class="persona-btn" routerLink="/new-persona">Crear persona</button>
+
+  <h2>Personas Registradas</h2>
+
+  <small>Resultados: {{personas.length}} {{personas.length == 1 ? 'Registro' : 'Registros'}}</small>
+
+  <div *ngFor="let persona of personas" class="persona-reg">
+    <h5>{{persona.nombres}} {{persona.apellidos}}</h5>
+    <small> <b>Documento</b> {{persona.tipo_documento}}{{persona.numero_documento}}</small>
+    <small> <b>Correo Electrónico:</b> {{ persona.email }}</small>
+    <small class="date"> <b>Fecha de creacion:</b> {{_utils.getDateString(persona.fecha_creacion)}}</small>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<section class="content flex-center">
+  <button class="persona-btn" routerLink="/personas">
+    Personas Registradas
+  </button>
+
+  <form
+    *ngIf="register_form"
+    [formGroup]="register_form"
+    (ngSubmit)="onSubmit()"
+  >
+    <h2>Bienvenido</h2>
+
+    <div class="form-group">
+      <label for="documento">Documento de Identidad</label>
+      <input id="documento" formControlName="documento" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="nombres">Nombre</label>
+      <input id="nombres" formControlName="nombres" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo Electrónico</label>
+      <input id="email" formControlName="email" type="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="date">Fecha de Creacion</label>
+      <input id="date" formControlName="date" type="text" />
+    </div>
+
+    <button type="submit">Cerrar Sesión</button>
+  </form>
+</section>
